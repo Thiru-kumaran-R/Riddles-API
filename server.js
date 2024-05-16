@@ -12,6 +12,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", router);
 
+app.use((error, req, res, next) => {
+  const message = error.message;
+  const statusCode = error.statusCode;
+  return res.json({ message: message, statusCode: statusCode });
+});
+
 app.listen(PORT, () => {
   mongoose
     .connect(
