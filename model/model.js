@@ -16,5 +16,13 @@ const riddlesSchema = new Schema({
 const funnyRiddles = mongoose.model("funnyRiddle", riddlesSchema);
 const logicRiddles = mongoose.model("logicRiddles", riddlesSchema);
 const mathRiddles = mongoose.model("mathRiddles", riddlesSchema);
+const mysteryRiddles = mongoose.model("mysteryRiddles", riddlesSchema);
+const whoAmIRiddles = mongoose.model("whoAmIRiddles", riddlesSchema);
 
-export { funnyRiddles, logicRiddles, mathRiddles };
+export {
+  funnyRiddles,
+  logicRiddles,
+  mathRiddles,
+  mysteryRiddles,
+  whoAmIRiddles,
+};
