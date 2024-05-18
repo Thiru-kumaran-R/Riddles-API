@@ -4,6 +4,7 @@ import {
   mathRiddles,
   mysteryRiddles,
   whoAmIRiddles,
+  scienceRiddles,
 } from "../model/model.js";
 
 export async function getRiddle(req, res, next) {
@@ -57,6 +58,18 @@ export async function getMysteryRiddles(req, res, next) {
 export async function getWhoAmI(req, res, next) {
   try {
     const riddleQuestion = await whoAmIRiddles.aggregate([
+      { $sample: { size: 1 } },
+      { $project: { _id: 0, _v: 0 } },
+    ]);
+    return res.status(200).json(riddleQuestion);
+  } catch (err) {
+    next(err);
+  }
+}
+
+export async function getScience(req, res, next) {
+  try {
+    const riddleQuestion = await scienceRiddles.aggregate([
       { $sample: { size: 1 } },
       { $project: { _id: 0, _v: 0 } },
     ]);
