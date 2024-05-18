@@ -20,7 +20,7 @@ Welcome to the Riddles API! This API provides a collection of riddles across var
 
   - Endpoint to get mysterious riddles that will keep you guessing.
 
-  - **Science Riddles**: `/science`
+- **Science Riddles**: `/science`
   - Endpoint to get science riddles that incorporate scientific concepts or phenomena..
 
 ## Usage
