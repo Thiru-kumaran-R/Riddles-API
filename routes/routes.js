@@ -27,6 +27,4 @@ router.get("/mystery", getMysteryRiddles);
 
 router.get("/science", getScience);
 
-//Lateral Thinking Riddles
-
 export default router;
