@@ -1,17 +1,22 @@
 import { Router } from "express";
 import {
-  getRiddle,
+  //Get functions
+  getFunnyRiddle,
   getLogicRiddle,
   getMathRiddle,
   getMysteryRiddles,
   getWhoAmI,
   getScience,
+  //Post functions
+  postFunnyRiddle,
 } from "../controller/controller.js";
 
 const router = Router();
+// /funny
+router.get("/funny", getFunnyRiddle);
+router.post("/funny", postFunnyRiddle);
 
-router.get("/funny", getRiddle);
-
+// /math
 router.get("/math", getMathRiddle);
 
 router.get("/logic", getLogicRiddle);
