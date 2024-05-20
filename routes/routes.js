@@ -13,18 +13,18 @@ import {
 
 const router = Router();
 // /funny
-router.get("/funny", getFunnyRiddle);
-router.post("/funny", postFunnyRiddle);
+router.get("/riddles/funny", getFunnyRiddle);
+router.post("/riddles/funny", postFunnyRiddle);
 
 // /math
-router.get("/math", getMathRiddle);
+router.get("/riddles/math", getMathRiddle);
 
-router.get("/logic", getLogicRiddle);
+router.get("/riddles/logic", getLogicRiddle);
 
-router.get("/who-am-i", getWhoAmI);
+router.get("/riddles/who-am-i", getWhoAmI);
 
-router.get("/mystery", getMysteryRiddles);
+router.get("/riddles/mystery", getMysteryRiddles);
 
-router.get("/science", getScience);
+router.get("/riddles/science", getScience);
 
 export default router;

@@ -27,6 +27,37 @@ https://api.yourdomain.com/riddles
 - **Science Riddles**: `/science`
   - Endpoint to get science riddles that incorporate scientific concepts or phenomena..
 
+## Endpoints
+
+### GET/Riddles
+
+Retrive riddles of specific catefory
+
+#### Request
+
+GET/riddle/{category}
+
+#### Parameters
+
+- `category` (string): The category of riddles to retrieve. Must be one of the following:
+  - `funny`
+  - `logic`
+  - `math`
+  - `mystery`
+  - `science`
+  - `who-am-i`
+
+#### Response
+
+```json
+{
+  "id": "string",
+  "question": "string",
+  "answer": "string",
+  "category": "string"
+}
+```
+
 ## Installation
 
 1. Clone the repository:
