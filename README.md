@@ -52,7 +52,7 @@ GET/riddle/{category}
 ```json
 {
   "id": "string",
-  "question": "string",
+  "riddle": "string",
   "answer": "string",
   "category": "string"
 }
