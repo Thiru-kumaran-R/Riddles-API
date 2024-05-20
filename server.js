@@ -12,10 +12,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", router);
 
+app.use((req, res, next) => {
+  return res.status(404).json({
+    message: "No such route exits",
+    status: 404,
+  });
+});
+
 app.use((error, req, res, next) => {
   const message = error.message;
-  const statusCode = error.statusCode;
-  return res.json({ message: message, statusCode: statusCode });
+  const status = error.status;
+  return res.json({ message: message, status: status });
 });
 
 app.listen(PORT, () => {

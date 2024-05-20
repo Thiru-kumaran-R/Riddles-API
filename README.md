@@ -2,6 +2,10 @@
 
 Welcome to the Riddles API! This API provides a collection of riddles across various categories including funny, math, logic, and mystery. It's a fun way to challenge your mind and entertain yourself or your users with interesting riddles.
 
+## Base URL
+
+https://api.yourdomain.com/riddles
+
 ## Routes
 
 - **Funny Riddles**: `/funny`
@@ -23,14 +27,35 @@ Welcome to the Riddles API! This API provides a collection of riddles across var
 - **Science Riddles**: `/science`
   - Endpoint to get science riddles that incorporate scientific concepts or phenomena..
 
-## Usage
+## Installation
 
-To use the Riddles API, simply make HTTP GET requests to the desired route:
+1. Clone the repository:
 
-```http
-GET /funny
-GET /math
-GET /logic
-GET /mystery
-GET /science
+   ```bash
+   git clone https://github.com/Thiru-kumaran-R/Riddles-API.git
+   ```
+
+2. Go to project folder:
+
+   ```bash
+   cd project
+   ```
+
+3. Start the server:
+
+   ```bash
+   npm start
+   ```
+
+## Error Handling
+
+In case of any error, the API will return a JSON response with an appropriate status code and error message
+
+**Example**
+
+```bash
+{
+"message": "No such route exits",
+"status": 404
+}
 ```
