@@ -13,7 +13,7 @@ export async function getFunnyRiddle(req, res, next) {
       { $sample: { size: 1 } },
       { $project: { _id: 1, _v: 0 } },
     ]);
-    return res.status(200).json(riddleQuestion[0]);
+    return res.status(200).json({ ...riddleQuestion[0], category: "funny" });
   } catch (err) {
     next(err);
   }
@@ -47,8 +47,30 @@ export async function getLogicRiddle(req, res, next) {
       { $sample: { size: 1 } },
       { $project: { _id: 1, _v: 0 } },
     ]);
-    return res.status(200).json(riddleQuestion[0]);
+    return res.status(200).json({ ...riddleQuestion[0], category: "logic" });
   } catch (err) {
+    next(err);
+  }
+}
+
+export async function postLogicRiddle(req, res, next) {
+  try {
+    const riddle = req.body.riddle;
+    const answer = req.body.answer;
+
+    const riddleQuestion = new logicRiddles({
+      riddle: riddle,
+      answer: answer,
+    });
+    await riddleQuestion.save();
+    return res.status(201).json({
+      message: "Riddle posted successfully",
+      riddleQuestion: riddleQuestion,
+    });
+  } catch (err) {
+    if (!err.status) {
+      err.status = 500;
+    }
     next(err);
   }
 }
@@ -59,8 +81,30 @@ export async function getMathRiddle(req, res, next) {
       { $sample: { size: 1 } },
       { $project: { _id: 1, _v: 0 } },
     ]);
-    return res.status(200).json(riddleQuestion[0]);
+    return res.status(200).json({ ...riddleQuestion[0], category: "math" });
   } catch (err) {
+    next(err);
+  }
+}
+
+export async function postMathRiddle(req, res, next) {
+  try {
+    const riddle = req.body.riddle;
+    const answer = req.body.answer;
+
+    const riddleQuestion = new mathRiddles({
+      riddle: riddle,
+      answer: answer,
+    });
+    await riddleQuestion.save();
+    return res.status(201).json({
+      message: "Riddle posted successfully",
+      riddleQuestion: riddleQuestion,
+    });
+  } catch (err) {
+    if (!err.status) {
+      err.status = 500;
+    }
     next(err);
   }
 }
@@ -71,8 +115,30 @@ export async function getMysteryRiddles(req, res, next) {
       { $sample: { size: 1 } },
       { $project: { _id: 1, _v: 0 } },
     ]);
-    return res.status(200).json(riddleQuestion[0]);
+    return res.status(200).json({ ...riddleQuestion[0], category: "mystery" });
   } catch (err) {
+    next(err);
+  }
+}
+
+export async function postMysteryRiddle(req, res, next) {
+  try {
+    const riddle = req.body.riddle;
+    const answer = req.body.answer;
+
+    const riddleQuestion = new mysteryRiddles({
+      riddle: riddle,
+      answer: answer,
+    });
+    await riddleQuestion.save();
+    return res.status(201).json({
+      message: "Riddle posted successfully",
+      riddleQuestion: riddleQuestion,
+    });
+  } catch (err) {
+    if (!err.status) {
+      err.status = 500;
+    }
     next(err);
   }
 }
@@ -83,8 +149,30 @@ export async function getWhoAmI(req, res, next) {
       { $sample: { size: 1 } },
       { $project: { _id: 1, _v: 0 } },
     ]);
-    return res.status(200).json(riddleQuestion[0]);
+    return res.status(200).json({ ...riddleQuestion[0], category: "Who am I" });
   } catch (err) {
+    next(err);
+  }
+}
+
+export async function postWhoAmIRiddle(req, res, next) {
+  try {
+    const riddle = req.body.riddle;
+    const answer = req.body.answer;
+
+    const riddleQuestion = new whoAmIRiddles({
+      riddle: riddle,
+      answer: answer,
+    });
+    await riddleQuestion.save();
+    return res.status(201).json({
+      message: "Riddle posted successfully",
+      riddleQuestion: riddleQuestion,
+    });
+  } catch (err) {
+    if (!err.status) {
+      err.status = 500;
+    }
     next(err);
   }
 }
@@ -95,8 +183,30 @@ export async function getScience(req, res, next) {
       { $sample: { size: 1 } },
       { $project: { _id: 1, _v: 0 } },
     ]);
-    return res.status(200).json(riddleQuestion[0]);
+    return res.status(200).json({ ...riddleQuestion[0], category: "science" });
   } catch (err) {
+    next(err);
+  }
+}
+
+export async function postScienceRiddle(req, res, next) {
+  try {
+    const riddle = req.body.riddle;
+    const answer = req.body.answer;
+
+    const riddleQuestion = new scienceRiddles({
+      riddle: riddle,
+      answer: answer,
+    });
+    await riddleQuestion.save();
+    return res.status(201).json({
+      message: "Riddle posted successfully",
+      riddleQuestion: riddleQuestion,
+    });
+  } catch (err) {
+    if (!err.status) {
+      err.status = 500;
+    }
     next(err);
   }
 }

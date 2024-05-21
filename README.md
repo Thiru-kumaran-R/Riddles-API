@@ -58,6 +58,34 @@ GET/riddle/{category}
 }
 ```
 
+### POST/Riddles
+
+Retrive riddles of specific catefory
+
+#### Request
+
+POST/riddle/{category}
+
+#### Parameters
+
+- `category` (string): The category of riddles to retrieve. Must be one of the following:
+  - `funny`
+  - `logic`
+  - `math`
+  - `mystery`
+  - `science`
+  - `who-am-i`
+
+#### Request
+
+```json
+{
+  "riddle": "string",
+  "answer": "string",
+  "category": "string"
+}
+```
+
 ## Installation
 
 1. Clone the repository:
