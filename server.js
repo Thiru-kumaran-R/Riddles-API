@@ -8,8 +8,7 @@ import router from "./routes/routes.js";
 const app = express();
 configDotenv();
 const PORT = process.env.PORT || 3000;
-const DB =
-  "mongodb+srv://thiru:jjhtrF0HFn55rhrI@firstproject.27hr6ge.mongodb.net/riddles";
+const DB = process.env.RIDDLES_DB;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));

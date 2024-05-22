@@ -19,48 +19,23 @@ import { handleValidation, validateRiddle } from "../validation/validation.js";
 
 const router = Router();
 // /funny
-router.get("/riddles/funny", getFunnyRiddle);
-router.post(
-  "/riddles/funny",
-  validateRiddle,
-  handleValidation,
-  postFunnyRiddle
-);
+router.get("/funny", getFunnyRiddle);
+router.post("/funny", validateRiddle, handleValidation, postFunnyRiddle);
 
 // /math
-router.get("/riddles/math", getMathRiddle);
-router.post("/riddles/math", validateRiddle, handleValidation, postMathRiddle);
+router.get("/math", getMathRiddle);
+router.post("/math", validateRiddle, handleValidation, postMathRiddle);
 
-router.get("/riddles/logic", getLogicRiddle);
-router.post(
-  "/riddles/logic",
-  validateRiddle,
-  handleValidation,
-  postLogicRiddle
-);
+router.get("/logic", getLogicRiddle);
+router.post("/logic", validateRiddle, handleValidation, postLogicRiddle);
 
-router.get("/riddles/who-am-i", getWhoAmI);
-router.post(
-  "/riddles/who-am-i",
-  validateRiddle,
-  handleValidation,
-  postWhoAmIRiddle
-);
+router.get("/who-am-i", getWhoAmI);
+router.post("/who-am-i", validateRiddle, handleValidation, postWhoAmIRiddle);
 
-router.get("/riddles/mystery", getMysteryRiddles);
-router.post(
-  "/riddles/mystery",
-  validateRiddle,
-  handleValidation,
-  postMysteryRiddle
-);
+router.get("/mystery", getMysteryRiddles);
+router.post("/mystery", validateRiddle, handleValidation, postMysteryRiddle);
 
-router.get("/riddles/science", getScience);
-router.post(
-  "/riddles/science",
-  validateRiddle,
-  handleValidation,
-  postScienceRiddle
-);
+router.get("/science", getScience);
+router.post("/science", validateRiddle, handleValidation, postScienceRiddle);
 
 export default router;
