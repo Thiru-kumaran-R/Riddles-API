@@ -20,6 +20,7 @@ app.use((req, res, next) => {
     message: "No such route exits",
     status: 404,
   });
+  next();
 });
 
 app.use((error, req, res, next) => {
