@@ -6,6 +6,7 @@ import router from "./routes/routes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const DB = process.env.RIDDLES_DB;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,9 +27,5 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  mongoose
-    .connect(
-      "mongodb+srv://thiru:jjhtrF0HFn55rhrI@firstproject.27hr6ge.mongodb.net/riddles"
-    )
-    .then(() => console.log(`port running at ${PORT}`));
+  mongoose.connect(DB).then(() => console.log(`port running at ${PORT}`));
 });
