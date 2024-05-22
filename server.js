@@ -1,10 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import { configDotenv } from "dotenv";
 import mongoose from "mongoose";
 import router from "./routes/routes.js";
 
 const app = express();
+configDotenv();
 const PORT = process.env.PORT || 3000;
 const DB = process.env.RIDDLES_DB;
 
