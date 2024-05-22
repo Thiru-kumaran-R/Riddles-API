@@ -4,7 +4,7 @@ Welcome to the Riddles API! This API provides a collection of riddles across var
 
 ## Base URL
 
-https://api.yourdomain.com/riddles
+https://riddles-api.vercel.app/riddles/
 
 ## Routes
 
@@ -35,7 +35,7 @@ Retrive riddles of specific catefory
 
 #### Request
 
-GET/riddle/{category}
+GET/riddles/{category}
 
 #### Parameters
 
@@ -64,7 +64,7 @@ Retrive riddles of specific catefory
 
 #### Request
 
-POST/riddle/{category}
+POST/riddles/{category}
 
 #### Parameters
 
