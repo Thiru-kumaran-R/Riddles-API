@@ -18,6 +18,9 @@ import {
 import { handleValidation, validateRiddle } from "../validation/validation.js";
 
 const router = Router();
+
+router.get("/", getFunnyRiddle);
+
 // /funny
 router.get("/funny", getFunnyRiddle);
 router.post("/funny", validateRiddle, handleValidation, postFunnyRiddle);
