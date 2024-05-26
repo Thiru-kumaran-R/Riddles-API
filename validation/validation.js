@@ -1,4 +1,4 @@
-import { body, check, validationResult } from "express-validator";
+import { body, validationResult } from "express-validator";
 
 export const validateRiddle = [
   body("riddle").notEmpty().trim().withMessage("Riddle field cannot be empty"),
