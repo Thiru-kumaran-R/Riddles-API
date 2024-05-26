@@ -19,6 +19,7 @@ import { handleValidation, validateRiddle } from "../validation/validation.js";
 
 const router = Router();
 
+//random
 router.get("/", getFunnyRiddle);
 
 // /funny
