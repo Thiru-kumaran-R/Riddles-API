@@ -139,3 +139,4 @@ data/riddles.json
 data/whoAmIRiddle.json
 data/scienceRiddle.json
 
+.DS_Store
