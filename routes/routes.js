@@ -19,9 +19,6 @@ import { handleValidation, validateRiddle } from "../validation/validation.js";
 
 const router = Router();
 
-//random
-router.get("/", getFunnyRiddle);
-
 // /funny
 router.get("/funny", getFunnyRiddle);
 router.post("/funny", validateRiddle, handleValidation, postFunnyRiddle);
@@ -42,4 +39,4 @@ router.post("/mystery", validateRiddle, handleValidation, postMysteryRiddle);
 router.get("/science", getScience);
 router.post("/science", validateRiddle, handleValidation, postScienceRiddle);
 
-export default router;
+export { router }
