@@ -4,7 +4,7 @@ Welcome to the Riddles API! This API provides a collection of riddles across var
 
 ## Base URL
 
-https://riddles-api.vercel.app/
+https://riddles-api-seven.vercel.app/
 
 ## Routes
 
@@ -37,15 +37,33 @@ Retrive riddles of specific catefory
 
 GET/{category}
 
-#### Parameters
+#### Get riddle based on science
 
-- `category` (string): The category of riddles to retrieve. Must be one of the following:
-  - `funny`
-  - `logic`
-  - `math`
-  - `mystery`
-  - `science`
-  - `who-am-i`
+```bash
+ https://riddles-api-seven.vercel.app/science
+```
+#### Get riddle based on math
+
+```bash
+ https://riddles-api-seven.vercel.app/math
+```
+#### Get riddle based on mystery
+
+```bash
+ https://riddles-api-seven.vercel.app/mystery
+```
+
+#### Get funny riddle
+
+```bash
+ https://riddles-api-seven.vercel.app/funny
+```
+#### Get riddle based on logics
+
+```bash
+ https://riddles-api-seven.vercel.app/logic
+```
+
 
 #### Response
 
@@ -60,21 +78,17 @@ GET/{category}
 
 ### POST/Riddles
 
-Retrive riddles of specific catefory
+Post riddle on specific catefory
 
 #### Request
 
 POST/{category}
 
-#### Parameters
+#### Post Riddle
 
-- `category` (string): The category of riddles to retrieve. Must be one of the following:
-  - `funny`
-  - `logic`
-  - `math`
-  - `mystery`
-  - `science`
-  - `who-am-i`
+```bash
+ https://aptitude-api.vercel.app/{category}
+```
 
 #### Request
 
