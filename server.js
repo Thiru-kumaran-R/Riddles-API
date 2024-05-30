@@ -1,12 +1,31 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import {router} from "./routes/routes.js";
+import { router } from "./routes/routes.js";
+dotenv.config();
 
 const app = express();
-dotenv.config();
 const PORT = process.env.PORT || 3000;
-const DB = "mongodb+srv://thiru:jjhtrF0HFn55rhrI@firstproject.27hr6ge.mongodb.net/?retryWrites=true&w=majority&appName=firstProject";
+const DB = process.env.MONGODB_URI;
+
+const start = async () => {
+  if (!DB) {
+    throw new Error("auth DB_URI must be defined");
+  }
+  try {
+    await mongoose.connect(DB);
+    console.log(DB)
+    console.log("Server connected to MongoDb!");
+  } catch (err) {
+    console.error(err);
+  }
+
+  app.listen(PORT, () => {
+    console.log(`Server is listening on ${PORT}!!!!!!!!!`);
+  });
+};
+
+start();
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -29,14 +48,7 @@ app.use((req, res, next) => {
 });
 
 app.use((error, req, res, next) => {
-  const message = error.message || 'An unknown error occurred';
-  const status = error.status || 500 ;
+  const message = error.message || "An unknown error occurred";
+  const status = error.status || 500;
   return res.json({ message: message, status: status });
-});
-
-app.listen(PORT, () => {
-  mongoose
-    .connect(DB)
-    .then(() => console.log(`port running at ${PORT}`))
-    .catch((err) => console.error("Failed to connect to MongoDB", err));
 });

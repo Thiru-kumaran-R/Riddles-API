@@ -9,10 +9,12 @@ import {
 
 export async function getFunnyRiddle(req, res, next) {
   try {
-    const riddleQuestion = await funnyRiddles.findOne();
+    const riddleQuestion = await funnyRiddles.aggregate([
+      {$sample : {size : 1}}
+    ]);
     return res
       .status(200)
-      .json(riddleQuestion);
+      .json(riddleQuestion[0]);
   } catch (err) {
     next(err);
   }
@@ -42,10 +44,12 @@ export async function postFunnyRiddle(req, res, next) {
 
 export async function getLogicRiddle(req, res, next) {
   try {
-    const riddleQuestion = await logicRiddles.findOne();
+    const riddleQuestion = await logicRiddles.aggregate([
+      {$sample : {size : 1}}
+    ]);
     return res
       .status(200)
-      .json(riddleQuestion);
+      .json(riddleQuestion[0]);
   } catch (err) {
     next(err);
   }
@@ -75,10 +79,12 @@ export async function postLogicRiddle(req, res, next) {
 
 export async function getMathRiddle(req, res, next) {
   try {
-    const riddleQuestion = await mathRiddles.findOne();
+    const riddleQuestion = await mathRiddles.aggregate([
+      {$sample : {size : 1}}
+    ]);
     return res
       .status(200)
-      .json(riddleQuestion);
+      .json(riddleQuestion[0]);
   } catch (err) {
     next(err);
   }
@@ -108,10 +114,12 @@ export async function postMathRiddle(req, res, next) {
 
 export async function getMysteryRiddles(req, res, next) {
   try {
-    const riddleQuestion = await mysteryRiddles.findOne();
+    const riddleQuestion = await mysteryRiddles.aggregate([
+      {$sample : {size : 1}}
+    ]);
     return res
       .status(200)
-      .json(riddleQuestion);
+      .json(riddleQuestion[0]);
   } catch (err) {
     next(err);
   }
@@ -141,10 +149,12 @@ export async function postMysteryRiddle(req, res, next) {
 
 export async function getWhoAmI(req, res, next) {
   try {
-    const riddleQuestion = await whoAmIRiddles.findOne();
+    const riddleQuestion = await whoAmIRiddles.aggregate([
+      {$sample : {size : 1}}
+    ]);
     return res
       .status(200)
-      .json(riddleQuestion);
+      .json(riddleQuestion[0]);
   } catch (err) {
     next(err);
   }
@@ -174,10 +184,12 @@ export async function postWhoAmIRiddle(req, res, next) {
 
 export async function getScience(req, res, next) {
   try {
-    const riddleQuestion = await scienceRiddles.findOne();
+    const riddleQuestion = await scienceRiddles.aggregate([
+      {$sample : {size : 1}}
+    ]);
     return res
       .status(200)
-      .json(riddleQuestion);
+      .json(riddleQuestion[0]);
   } catch (err) {
     next(err);
   }

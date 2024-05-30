@@ -33,10 +33,6 @@ https://riddles-api-seven.vercel.app/
 
 Retrive riddles of specific catefory
 
-#### Request
-
-GET/{category}
-
 #### Get riddle based on science
 
 ```bash
@@ -82,7 +78,7 @@ Post riddle on specific catefory
 
 #### Request
 
-POST/{category}
+POST/{ category }
 
 #### Post Riddle
 

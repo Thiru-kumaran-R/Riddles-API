@@ -16,8 +16,8 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "express-validator": "^7.1.0",
-    "mongodb": "^6.6.1",
-    "mongoose": "^8.3.4"
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
