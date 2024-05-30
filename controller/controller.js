@@ -9,10 +9,10 @@ import {
 
 export async function getFunnyRiddle(req, res, next) {
   try {
-    const riddleQuestion = await funnyRiddles.find();
+    const riddleQuestion = await funnyRiddles.findOne();
     return res
       .status(200)
-      .json({ ...riddleQuestion[0]._doc, category: "funny" });
+      .json(riddleQuestion);
   } catch (err) {
     next(err);
   }
@@ -30,7 +30,7 @@ export async function postFunnyRiddle(req, res, next) {
     await riddleQuestion.save();
     return res.status(201).json({
       message: "Riddle posted successfully",
-      riddleQuestion: riddleQuestion,
+      riddleQuestion: riddleQuestion._id,
     });
   } catch (err) {
     if (!err.status) {
@@ -42,10 +42,10 @@ export async function postFunnyRiddle(req, res, next) {
 
 export async function getLogicRiddle(req, res, next) {
   try {
-    const riddleQuestion = await logicRiddles.find();
+    const riddleQuestion = await logicRiddles.findOne();
     return res
       .status(200)
-      .json({ ...riddleQuestion[0]._doc, category: "logic" });
+      .json(riddleQuestion);
   } catch (err) {
     next(err);
   }
@@ -63,7 +63,7 @@ export async function postLogicRiddle(req, res, next) {
     await riddleQuestion.save();
     return res.status(201).json({
       message: "Riddle posted successfully",
-      riddleQuestion: riddleQuestion,
+      riddleQuestion: riddleQuestion._id,
     });
   } catch (err) {
     if (!err.status) {
@@ -75,10 +75,10 @@ export async function postLogicRiddle(req, res, next) {
 
 export async function getMathRiddle(req, res, next) {
   try {
-    const riddleQuestion = await mathRiddles.find();
+    const riddleQuestion = await mathRiddles.findOne();
     return res
       .status(200)
-      .json({ ...riddleQuestion[0]._doc, category: "math" });
+      .json(riddleQuestion);
   } catch (err) {
     next(err);
   }
@@ -96,7 +96,7 @@ export async function postMathRiddle(req, res, next) {
     await riddleQuestion.save();
     return res.status(201).json({
       message: "Riddle posted successfully",
-      riddleQuestion: riddleQuestion,
+      riddleQuestion: riddleQuestion._id,
     });
   } catch (err) {
     if (!err.status) {
@@ -108,10 +108,10 @@ export async function postMathRiddle(req, res, next) {
 
 export async function getMysteryRiddles(req, res, next) {
   try {
-    const riddleQuestion = await mysteryRiddles.find();
+    const riddleQuestion = await mysteryRiddles.findOne();
     return res
       .status(200)
-      .json({ ...riddleQuestion[0]._doc, category: "mystery" });
+      .json(riddleQuestion);
   } catch (err) {
     next(err);
   }
@@ -129,7 +129,7 @@ export async function postMysteryRiddle(req, res, next) {
     await riddleQuestion.save();
     return res.status(201).json({
       message: "Riddle posted successfully",
-      riddleQuestion: riddleQuestion,
+      riddleQuestion: riddleQuestion._id,
     });
   } catch (err) {
     if (!err.status) {
@@ -141,10 +141,10 @@ export async function postMysteryRiddle(req, res, next) {
 
 export async function getWhoAmI(req, res, next) {
   try {
-    const riddleQuestion = await whoAmIRiddles.find();
+    const riddleQuestion = await whoAmIRiddles.findOne();
     return res
       .status(200)
-      .json({ ...riddleQuestion[0]._doc, category: "Who am I" });
+      .json(riddleQuestion);
   } catch (err) {
     next(err);
   }
@@ -162,7 +162,7 @@ export async function postWhoAmIRiddle(req, res, next) {
     await riddleQuestion.save();
     return res.status(201).json({
       message: "Riddle posted successfully",
-      riddleQuestion: riddleQuestion,
+      riddleQuestion: riddleQuestion._id,
     });
   } catch (err) {
     if (!err.status) {
@@ -174,10 +174,10 @@ export async function postWhoAmIRiddle(req, res, next) {
 
 export async function getScience(req, res, next) {
   try {
-    const riddleQuestion = await scienceRiddles.find();
+    const riddleQuestion = await scienceRiddles.findOne();
     return res
       .status(200)
-      .json({ ...riddleQuestion[0]._doc, category: "science" });
+      .json(riddleQuestion);
   } catch (err) {
     next(err);
   }
@@ -195,7 +195,7 @@ export async function postScienceRiddle(req, res, next) {
     await riddleQuestion.save();
     return res.status(201).json({
       message: "Riddle posted successfully",
-      riddleQuestion: riddleQuestion,
+      riddleQuestion: riddleQuestion._id,
     });
   } catch (err) {
     if (!err.status) {
