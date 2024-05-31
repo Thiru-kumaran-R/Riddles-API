@@ -2,9 +2,9 @@
 
 Welcome to the Riddles API! This API provides a collection of riddles across various categories including funny, math, logic, and mystery. It's a fun way to challenge your mind and entertain yourself or your users with interesting riddles.
 
-## Base URL
+## Base API URL
 
-https://riddles-api-seven.vercel.app/
+https://riddles-api-eight.vercel.app/{ category }
 
 ## Routes
 
@@ -25,6 +25,7 @@ https://riddles-api-seven.vercel.app/
   - Endpoint to get mysterious riddles that will keep you guessing.
 
 - **Science Riddles**: `/science`
+
   - Endpoint to get science riddles that incorporate scientific concepts or phenomena..
 
 ## Endpoints
@@ -36,28 +37,28 @@ Retrive riddles of specific catefory
 #### Get riddle based on science
 
 ```bash
- https://riddles-api-seven.vercel.app/science
+https://riddles-api-eight.vercel.app/science
 ```
 #### Get riddle based on math
 
 ```bash
- https://riddles-api-seven.vercel.app/math
+https://riddles-api-eight.vercel.app/math
 ```
 #### Get riddle based on mystery
 
 ```bash
- https://riddles-api-seven.vercel.app/mystery
+https://riddles-api-eight.vercel.app/mystery
 ```
 
 #### Get funny riddle
 
 ```bash
- https://riddles-api-seven.vercel.app/funny
+https://riddles-api-eight.vercel.app/funny
 ```
 #### Get riddle based on logics
 
 ```bash
- https://riddles-api-seven.vercel.app/logic
+https://riddles-api-eight.vercel.app/logic
 ```
 
 
@@ -83,7 +84,7 @@ POST/{ category }
 #### Post Riddle
 
 ```bash
- https://aptitude-api.vercel.app/{category}
+ https://riddles-api-eight.vercel.app/{category}
 ```
 
 #### Request

@@ -10,11 +10,12 @@ import {
 export async function getFunnyRiddle(req, res, next) {
   try {
     const riddleQuestion = await funnyRiddles.aggregate([
-      {$sample : {size : 1}}
+      {$sample : {size : 1}},
+      {$project : { _id : 0, _v : 0 }}
     ]);
     return res
       .status(200)
-      .json(riddleQuestion[0]);
+      .json({...riddleQuestion[0], category : "funny" });
   } catch (err) {
     next(err);
   }
@@ -45,11 +46,12 @@ export async function postFunnyRiddle(req, res, next) {
 export async function getLogicRiddle(req, res, next) {
   try {
     const riddleQuestion = await logicRiddles.aggregate([
-      {$sample : {size : 1}}
+      {$sample : {size : 1}},
+      {$project : { _id : 0, _v : 0 }}
     ]);
     return res
       .status(200)
-      .json(riddleQuestion[0]);
+      .json({...riddleQuestion[0], category : "logic" });
   } catch (err) {
     next(err);
   }
@@ -80,11 +82,12 @@ export async function postLogicRiddle(req, res, next) {
 export async function getMathRiddle(req, res, next) {
   try {
     const riddleQuestion = await mathRiddles.aggregate([
-      {$sample : {size : 1}}
+      {$sample : {size : 1}},
+      {$project : { _id : 0, _v : 0 }}
     ]);
     return res
       .status(200)
-      .json(riddleQuestion[0]);
+      .json({...riddleQuestion[0], category : "math" });
   } catch (err) {
     next(err);
   }
@@ -115,11 +118,12 @@ export async function postMathRiddle(req, res, next) {
 export async function getMysteryRiddles(req, res, next) {
   try {
     const riddleQuestion = await mysteryRiddles.aggregate([
-      {$sample : {size : 1}}
+      {$sample : {size : 1}},
+      {$project : { _id : 0, _v : 0 }}
     ]);
     return res
       .status(200)
-      .json(riddleQuestion[0]);
+      .json({...riddleQuestion[0], category : "mystery" });
   } catch (err) {
     next(err);
   }
@@ -150,11 +154,12 @@ export async function postMysteryRiddle(req, res, next) {
 export async function getWhoAmI(req, res, next) {
   try {
     const riddleQuestion = await whoAmIRiddles.aggregate([
-      {$sample : {size : 1}}
+      {$sample : {size : 1}},
+      {$project : { _id : 0, _v : 0 }}
     ]);
     return res
       .status(200)
-      .json(riddleQuestion[0]);
+      .json({...riddleQuestion[0], category : "Who am I" });
   } catch (err) {
     next(err);
   }
@@ -185,11 +190,12 @@ export async function postWhoAmIRiddle(req, res, next) {
 export async function getScience(req, res, next) {
   try {
     const riddleQuestion = await scienceRiddles.aggregate([
-      {$sample : {size : 1}}
+      {$sample : {size : 1}},
+      {$project : { _id : 0, _v : 0 }}
     ]);
     return res
       .status(200)
-      .json(riddleQuestion[0]);
+      .json({...riddleQuestion[0], category : "science" });
   } catch (err) {
     next(err);
   }
