@@ -10,14 +10,28 @@ import {
 export async function getFunnyRiddle(req, res, next) {
   try {
     const riddleQuestion = await funnyRiddles.aggregate([
-      {$sample : {size : 1}},
-      {$project : { _id : 0, _v : 0 }}
+      { $sample: { size: 1 } },
+      { $project: { _id: 0, _v: 0 } },
     ]);
-    return res
-      .status(200)
-      .json({...riddleQuestion[0], category : "funny" });
+    return res.status(200).json({ ...riddleQuestion[0], category: "funny" });
   } catch (err) {
     next(err);
+  }
+}
+
+export async function numberOfFunnyRiddles(req, res, next) {
+  try {
+    const number = req.params.number;
+    const riddlesArray = await funnyRiddles.aggregate([
+      { $sample: { size: +number } },
+      { $project: { _id: 0, _v: 0 } },
+    ]);
+    return res.status(200).json({ riddlesArray, category: "funny" });
+  } catch (error) {
+    if (!error.status) {
+      error.status = 500;
+    }
+    next(error);
   }
 }
 
@@ -46,14 +60,28 @@ export async function postFunnyRiddle(req, res, next) {
 export async function getLogicRiddle(req, res, next) {
   try {
     const riddleQuestion = await logicRiddles.aggregate([
-      {$sample : {size : 1}},
-      {$project : { _id : 0, _v : 0 }}
+      { $sample: { size: 1 } },
+      { $project: { _id: 0, _v: 0 } },
     ]);
-    return res
-      .status(200)
-      .json({...riddleQuestion[0], category : "logic" });
+    return res.status(200).json({ ...riddleQuestion[0], category: "logic" });
   } catch (err) {
     next(err);
+  }
+}
+
+export async function numberOfLogicRiddles(req, res, next) {
+  try {
+    const number = req.params.number;
+    const riddlesArray = await logicRiddles.aggregate([
+      { $sample: { size: +number } },
+      { $project: { _id: 0, _v: 0 } },
+    ]);
+    return res.status(200).json({ riddlesArray, category: "logic" });
+  } catch (error) {
+    if (!error.status) {
+      error.status = 500;
+    }
+    next(error);
   }
 }
 
@@ -82,13 +110,30 @@ export async function postLogicRiddle(req, res, next) {
 export async function getMathRiddle(req, res, next) {
   try {
     const riddleQuestion = await mathRiddles.aggregate([
-      {$sample : {size : 1}},
-      {$project : { _id : 0, _v : 0 }}
+      { $sample: { size: 1 } },
+      { $project: { _id: 0, _v: 0 } },
     ]);
-    return res
-      .status(200)
-      .json({...riddleQuestion[0], category : "math" });
+    return res.status(200).json({ ...riddleQuestion[0], category: "math" });
   } catch (err) {
+    if (!err.status) {
+      err.status = 500;
+    }
+    next(err);
+  }
+}
+
+export async function numberOfMathRiddles(req, res, next) {
+  try {
+    const number = req.params.number;
+    const riddlesArray = await mathRiddles.aggregate([
+      { $sample: { size: +number } },
+      { $project: { _id: 0, _v: 0 } },
+    ]);
+    return res.status(200).json({ riddlesArray, category: "math" });
+  } catch (err) {
+    if (!err.status) {
+      err.status = 500;
+    }
     next(err);
   }
 }
@@ -118,12 +163,10 @@ export async function postMathRiddle(req, res, next) {
 export async function getMysteryRiddles(req, res, next) {
   try {
     const riddleQuestion = await mysteryRiddles.aggregate([
-      {$sample : {size : 1}},
-      {$project : { _id : 0, _v : 0 }}
+      { $sample: { size: 1 } },
+      { $project: { _id: 0, _v: 0 } },
     ]);
-    return res
-      .status(200)
-      .json({...riddleQuestion[0], category : "mystery" });
+    return res.status(200).json({ ...riddleQuestion[0], category: "mystery" });
   } catch (err) {
     next(err);
   }
@@ -154,12 +197,10 @@ export async function postMysteryRiddle(req, res, next) {
 export async function getWhoAmI(req, res, next) {
   try {
     const riddleQuestion = await whoAmIRiddles.aggregate([
-      {$sample : {size : 1}},
-      {$project : { _id : 0, _v : 0 }}
+      { $sample: { size: 1 } },
+      { $project: { _id: 0, _v: 0 } },
     ]);
-    return res
-      .status(200)
-      .json({...riddleQuestion[0], category : "Who am I" });
+    return res.status(200).json({ ...riddleQuestion[0], category: "Who am I" });
   } catch (err) {
     next(err);
   }
@@ -190,12 +231,10 @@ export async function postWhoAmIRiddle(req, res, next) {
 export async function getScience(req, res, next) {
   try {
     const riddleQuestion = await scienceRiddles.aggregate([
-      {$sample : {size : 1}},
-      {$project : { _id : 0, _v : 0 }}
+      { $sample: { size: 1 } },
+      { $project: { _id: 0, _v: 0 } },
     ]);
-    return res
-      .status(200)
-      .json({...riddleQuestion[0], category : "science" });
+    return res.status(200).json({ ...riddleQuestion[0], category: "science" });
   } catch (err) {
     next(err);
   }
