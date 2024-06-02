@@ -30,70 +30,66 @@ https://riddles-api-eight.vercel.app/{ category }
 
 ## Endpoints
 
-### GET/Riddles
+| Method | Endpoint         | Description               |
+| ------ | -----------------| ------------------------- |
+| GET    | /category        | Retrieve specific emoji   |
+| GET    | /category/number | Get a random emoji.       |
+| POST   | /category        | Add a new emoji.          |
+| PATCH  | /category        | Update an existing emoji. |
 
-Retrive riddles of specific catefory
+## Example
+
+Retrive riddles of science catefory
 
 #### Get riddle based on science
 
 ```bash
 https://riddles-api-eight.vercel.app/science
 ```
-#### Get riddle based on math
-
-```bash
-https://riddles-api-eight.vercel.app/math
-```
-#### Get riddle based on mystery
-
-```bash
-https://riddles-api-eight.vercel.app/mystery
-```
-
-#### Get funny riddle
-
-```bash
-https://riddles-api-eight.vercel.app/funny
-```
-#### Get riddle based on logics
-
-```bash
-https://riddles-api-eight.vercel.app/logic
-```
-
 
 #### Response
 
 ```json
 {
-  "id": "string",
   "riddle": "string",
   "answer": "string",
   "category": "string"
 }
 ```
 
-### POST/Riddles
-
-Post riddle on specific catefory
-
-#### Request
-
-POST/{ category }
-
-#### Post Riddle
+#### Get 100 riddles based on science
 
 ```bash
- https://riddles-api-eight.vercel.app/{category}
+https://riddles-api-eight.vercel.app/science/100
 ```
 
-#### Request
+#### Response
 
 ```json
 {
-  "riddle": "string",
+  "riddlesArray": ["riddleQuestions"],
   "answer": "string",
   "category": "string"
+}
+```
+
+
+
+#### Post Riddle
+
+POST/{ category }
+
+```bash
+ https://riddles-api-eight.vercel.app/{category}
+
+```
+
+#### Response
+
+```json
+{
+  "message": "Riddle posted successfully",
+  "riddleQuestion": "riddleQuestion._id"
 }
 ```
 
