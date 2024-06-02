@@ -10,6 +10,9 @@ import {
   numberOfFunnyRiddles,
   numberOfLogicRiddles,
   numberOfMathRiddles,
+  numberOfWhoAmIRiddles,
+  numberOfScienceRiddles,
+  numberOfMysteryRiddles,
   //Post functions
   postFunnyRiddle,
   postMathRiddle,
@@ -40,12 +43,15 @@ router.get("/logic/:number", numberOfLogicRiddles)
 router.post("/logic", validateRiddle, handleValidation, postLogicRiddle);
 
 router.get("/who-am-i", getWhoAmI);
+router.get("/who-am-i/:number", numberOfWhoAmIRiddles)
 router.post("/who-am-i", validateRiddle, handleValidation, postWhoAmIRiddle);
 
 router.get("/mystery", getMysteryRiddles);
+router.get("/mystery/:number", numberOfMysteryRiddles)
 router.post("/mystery", validateRiddle, handleValidation, postMysteryRiddle);
 
 router.get("/science", getScience);
+router.get("/science/:number", numberOfScienceRiddles)
 router.post("/science", validateRiddle, handleValidation, postScienceRiddle);
 
 export { router }
