@@ -30,12 +30,12 @@ https://riddles-api-eight.vercel.app/{ category }
 
 ## Endpoints
 
-| Method | Endpoint         | Description               |
-| ------ | -----------------| ------------------------- |
-| GET    | /category        | Retrieve specific emoji   |
-| GET    | /category/number | Get a random emoji.       |
-| POST   | /category        | Add a new emoji.          |
-| PATCH  | /category        | Update an existing emoji. |
+| Method | Endpoint         | Description                   |
+| ------ | -----------------| ----------------------------- |
+| GET    | /category        | Retrieve specific riddle      |
+| GET    | /category/number | Get specified no. of riddles. |
+| POST   | /category        | Add a new riddle.             |
+| PATCH  | /category        | Update an existing riddle.    |
 
 ## Example
 
