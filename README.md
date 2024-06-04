@@ -35,7 +35,8 @@ https://riddles-api-eight.vercel.app/{ category }
 | GET    | /category        | Retrieve specific riddle      |
 | GET    | /category/number | Get specified no. of riddles. |
 | POST   | /category        | Add a new riddle.             |
-| PATCH  | /category        | Update an existing riddle.    |
+| PATCH  | /category/id     | Update an existing riddle.    |
+| DELETE | /category/id     | Deletes an existing riddle.   |
 
 ## Example
 
